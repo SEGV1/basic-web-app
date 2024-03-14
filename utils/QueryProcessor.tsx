@@ -6,6 +6,20 @@ export default function QueryProcessor(query: string): string {
       "writer in the English language and the world's pre-eminent dramatist."
     );
   }
+  else if (query.toLowerCase().includes("name")) {
+    return (
+      "Bennett Li"
+    );
+  }
+
+  else if (query.toLowerCase().includes("largest")) {
+    const numbers = query.match(/\d+/g);
+    if (numbers) {
+      const parsedNumbers = numbers.map(Number);
+      return Math.max(...parsedNumbers).toString();
+    }
+  }
+ 
 
   return "";
 }
